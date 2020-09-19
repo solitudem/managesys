@@ -10,6 +10,8 @@
                 <el-form-item prop="password">
                     <el-input type="password" v-model="loginForm.password" prefix-icon="iconfont icon-3702mima"></el-input>
                 </el-form-item>
+
+                <!-- 登录与重置按钮 -->
                 <el-form-item class="btns">
                     <el-button type="primary" @click="login">登录</el-button>
                     <el-button type="info" @click="loginFormReset">重置</el-button>
