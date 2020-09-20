@@ -1,6 +1,8 @@
 <template>
     <div class="login">
+        
         <div class="login-box">
+            <div class="title">欢迎使用</div>
             <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" class="login-form">
                 <!-- 用户名输入框 -->
                 <el-form-item prop="username">
@@ -92,6 +94,14 @@ export default {
         border-radius: 4px;
         background-color: #fff;
     }
+    .title{
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translate(-50%);
+        font-size: 20px;
+    }
+
     .login-form{
         position: absolute;
         top: 50%;

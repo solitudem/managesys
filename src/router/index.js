@@ -5,6 +5,8 @@ Vue.use(VueRouter)
 
 const Login = () => import('../views/login/Login')
 const Home = () => import('../views/home/Home')
+const Welcome = () => import('../views/home/children/Welcome')
+const User = () => import('../views/user/User')
 
 const routes = [
     {
@@ -17,7 +19,19 @@ const routes = [
     },
     {
         path:'/home',
-        component:Home
+        component:Home,
+        redirect:'/welcome',
+        //配置子路由
+        children:[
+            {
+                path:'/welcome',
+                component:Welcome
+            },
+            {
+                path:'/users',
+                component:User
+            }
+        ]
     }
 ]
 const router = new VueRouter({
