@@ -7,6 +7,9 @@ const Login = () => import('../views/login/Login')
 const Home = () => import('../views/home/Home')
 const Welcome = () => import('../views/home/children/Welcome')
 const User = () => import('../views/user/User')
+const Rights = () => import('../views/power/rights/Rights')
+const Roles = () => import('../views/power/roles/Roles')
+const Categories = () => import('../views/goods/cate/Categories')
 
 const routes = [
     {
@@ -30,6 +33,18 @@ const routes = [
             {
                 path:'/users',
                 component:User
+            },
+            {
+                path:'/rights',
+                component:Rights
+            },
+            {
+                path:'/roles',
+                component:Roles
+            },
+            {
+                path:'/categories',
+                component:Categories
             }
         ]
     }
