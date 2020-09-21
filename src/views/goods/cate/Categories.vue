@@ -200,7 +200,7 @@ export default {
         if (!valid) {
           return;
         }
-        console.log(this.addCateForm);
+        // console.log(this.addCateForm);
 
         const { data: res } = await this.$http.post(
           "categories",
