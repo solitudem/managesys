@@ -5,7 +5,13 @@ import router from './router/index'
 import axios from 'axios'
 import ZkTable from 'vue-table-with-tree-grid'
 
+import VueQuillEditor from 'vue-quill-editor'
 
+import 'quill/dist/quill.core.css' // import styles
+import 'quill/dist/quill.snow.css' // for snow theme
+import 'quill/dist/quill.bubble.css' // for bubble theme
+
+Vue.use(VueQuillEditor)
 
 Vue.config.productionTip = false
 
@@ -21,6 +27,20 @@ axios.interceptors.request.use(config => {
 })
 Vue.prototype.$http = axios
 Vue.component('tree-table', ZkTable)
+
+//时间过滤器
+Vue.filter('dateFormat',function(time){
+  const t = new Date(time)
+
+  const y = t.getFullYear()
+  const m = (t.getMonth() + 1 + '').padStart(2, '0')
+  const d = (t.getDay() + '').padStart(2,'0')
+  const hh = (t.getHours() + '').padStart(2, '0')
+  const mm = (t.getMinutes() + '').padStart(2, '0')
+  const ss = (t.getSeconds() + '').padStart(2,'0')
+
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+})
 
 new Vue({
   render: h => h(App),

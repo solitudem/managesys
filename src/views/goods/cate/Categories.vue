@@ -37,7 +37,7 @@
           <el-tag type="success" v-else-if="scope.row.cat_level===1">二级</el-tag>
           <el-tag type="warning" v-else>三级</el-tag>
         </template>
-        <template slot="operation" slot-scope="scope">
+        <template slot="operation">
           <el-button type="primary" icon="el-icon-edit" size="mini">编辑</el-button>
           <el-button type="danger" icon="el-icon-delete" size="mini">删除</el-button>
         </template>
@@ -232,5 +232,4 @@ export default {
 .el-cascader {
   width: 100%;
 }
-
 </style>
