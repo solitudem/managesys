@@ -263,9 +263,7 @@ export default {
             if(res.meta.status !== 201){
                 return this.$message.error('添加商品失败!')
             }
-            this.$message.success('添加商品成功!')
-            console.log(res.data);
-            
+            this.$message.success('添加商品成功!')          
             this.$router.push('/goods')            
         })
     }
