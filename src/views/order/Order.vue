@@ -70,7 +70,7 @@
 
     <!-- 物流进度 -->
     <el-dialog title="物流进度" :visible.sync="processDialogVisible" width="50%">
-      <el-timeline :reverse="reverse">
+      <el-timeline :reverse="true">
         <el-timeline-item
           v-for="(activity, index) in processData"
           :key="index"
@@ -150,7 +150,7 @@ export default {
         return this.$message.error("获取物流信息失败!");
       }
       this.processData = res.data;
-      console.log(this.processData);
+    //   console.log(this.processData);
       this.processDialogVisible = true;
     }
   }
